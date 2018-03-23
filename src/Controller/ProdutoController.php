@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\VarDumper\VarDumper;
 
 class ProdutoController extends Controller
 {
@@ -138,8 +139,11 @@ class ProdutoController extends Controller
         $em = $this->getDoctrine()->getManager();
         $produto = $em->getRepository(Produto::class)->find($id);
 
+        VarDumper::dump($produto->getCaracteristicas());
+
         return [
-            'produto' => $produto
+            'produto' => $produto,
+            'carateristicas' => $produto->getCaracteristicas()
         ];
     }
 

@@ -87,7 +87,7 @@ class CaracteristicaController extends Controller
         }
 
         return [
-            'produto' => $caracteristica,
+            'caracteristica' => $caracteristica,
             'form' => $form->createView()
         ];
     }

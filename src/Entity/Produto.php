@@ -98,6 +98,42 @@ class Produto extends MinhaEntidade
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCategorias()
+    {
+        return $this->categorias;
+    }
+
+    /**
+     * @param mixed $categorias
+     * @return Produto
+     */
+    public function setCategorias($categorias)
+    {
+        $this->categorias = $categorias;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCaracteristicas()
+    {
+        return $this->caracteristicas;
+    }
+
+    /**
+     * @param mixed $caracteristicas
+     * @return Produto
+     */
+    public function setCaracteristicas($caracteristicas)
+    {
+        $this->caracteristicas = $caracteristicas;
+        return $this;
+    }
+
 
 
 
