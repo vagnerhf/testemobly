@@ -6,17 +6,15 @@ use App\Repository\MinhaEntidadeRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\MinhaEntidadeRepository")
- */
-class MinhaEntidade
+
+abstract class MinhaEntidade
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -24,7 +22,7 @@ class MinhaEntidade
      * @ORM\Column(type="string", length=100)
      * @Assert\NotBlank(message="Campo nome não pode ser vazio!")
      */
-    private $nome;
+    protected $nome;
 
 
     /**
@@ -34,7 +32,7 @@ class MinhaEntidade
      * @Assert\NotBlank(message="Campo descrição não pode ser vazio!")
      *
      */
-    private $descricao;
+    protected $descricao;
 
     /**
      * @return mixed
@@ -44,15 +42,6 @@ class MinhaEntidade
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
 
     /**
      * @return string
