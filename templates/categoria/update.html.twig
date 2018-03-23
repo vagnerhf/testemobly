@@ -2,11 +2,11 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-    Edição de produto -
+    Edição de Categoria
 {% endblock %}
 
 {% block body %}
-    <h1>Edição de produto - <small>{{ produto.nome }}</small></h1>
+    <h1>Edição de Categoria - <small>{{ categoria.nome }}</small></h1>
     <hr>
-    {% include "produto/_form.html.twig" %}
+    {% include "categoria/_form.html.twig" %}
 {% endblock %}

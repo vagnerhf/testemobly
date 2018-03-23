@@ -19,7 +19,7 @@
         </div>
     {% endfor %}
 
-    <h1>Listando produtos</h1>
+    <h1>Listando Categorias</h1>
     <hr>
     <div class="row">
         <div class="col-md-12">
@@ -31,33 +31,31 @@
         <tr>
             <th>Cod.</th>
             <th>Nome</th>
-            <th>Preço</th>
             <th>Ações</th>
         </tr>
         </thead>
         <tbody>
 
-        {% for produto in produtos %}
+        {% for categoria in categorias %}
             <tr>
-                <td>{{ produto.id }}</td>
-                <td>{{ produto.nome }}</td>
-                <td>R$ {{ produto.preco|number_format(2, ",", ".") }}</td>
+                <td>{{ categoria.id }}</td>
+                <td>{{ categoria.nome }}</td>
                 <td>
                     <a class="btn btn-sm btn-warning" href="{{ path('visualizar_categoria', {"id": categoria.id}) }}"><i class="fa fa-eye"></i></a>
                     <a class="btn btn-sm btn-success" href="{{ path('editar_categoria', {"id": categoria.id}) }}"><i class="fa fa-pencil"></i> </a>
-                    <a class="btn btn-sm btn-danger bt_excluir_produto" href="{{ path('apagar_categoria', {"id": categoria.id}) }}"><i class="fa fa-trash"></i> </a>
+                    <a class="btn btn-sm btn-danger bt_excluir_categoria" href="{{ path('apagar_categoria', {"id": categoria.id}) }}"><i class="fa fa-trash"></i> </a>
                 </td>
             </tr>
         {% endfor %}
 
         <script type="text/javascript">
             $(document).ready(function(){
-                $(".bt_excluir_produto").click(function(ev) {
+                $(".bt_excluir_categoria").click(function(ev) {
                     ev.preventDefault();
 
                     var url = $(this).prop("href");
 
-                    if (confirm("Dejesa excluir esta categoria?")) {
+                    if (confirm("Dejesa excluir esta Categoria?")) {
                         window.location = url;
                     }
 

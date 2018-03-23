@@ -3,8 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Caracteristica;
-use App\Entity\Produto;
-use App\Form\ProdutoType;
+use App\Form\CaracteristicaType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

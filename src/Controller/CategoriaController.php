@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Produto;
-use App\Form\ProdutoType;
+use App\Entity\Categoria;
+use App\Form\CategoriaType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -19,13 +19,12 @@ class CategoriaController extends Controller
     public function index()
     {
 
-        /*TODO: TROCAR PRODUTO POR CATEGORIA */
         $em = $this->getDoctrine()->getManager();
 
-        $produtos = $em->getRepository(Produto::class)->findAll();
+        $categorias = $em->getRepository(Categoria::class)->findAll();
 
         return [
-            'produtos' => $produtos
+            'categorias' => $categorias
         ];
 
     }
@@ -40,10 +39,9 @@ class CategoriaController extends Controller
      */
     public function create(Request $request)
     {
-        /*TODO: TROCAR PRODUTO POR CATEGORIA */
-        $produto = new Produto();
+        $categoria = new Categoria();
 
-        $form = $this->createForm(ProdutoType::class, $produto);
+        $form = $this->createForm(CategoriaType::class, $categoria);
 
         $form->handleRequest($request);
 
@@ -51,11 +49,11 @@ class CategoriaController extends Controller
 
             $em = $this->getDoctrine()->getManager();
 
-            $em->persist($produto);
+            $em->persist($categoria);
             $em->flush();
 
             //$this->get('session')->getFlashBag()->set('success', 'Produto foi salvo com sucesso!');
-            $this->addFlash('success', "Produto cadastrado!");
+            $this->addFlash('success', "Categoria cadastrada!");
             return $this->redirectToRoute('listar_categoria');
 
 
@@ -74,23 +72,23 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        /*TODO: TROCAR PRODUTO POR CATEGORIA */
-        $em = $this->getDoctrine()->getManager();
-        $produto = $em->getRepository(Produto::class)->find($id);
 
-        $form = $this->createForm(ProdutoType::class, $produto);
+        $em = $this->getDoctrine()->getManager();
+        $categoria = $em->getRepository(Categoria::class)->find($id);
+
+        $form = $this->createForm(CategoriaType::class, $categoria);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em->persist($produto);
+            $em->persist($categoria);
             $em->flush();
 
-            $this->get("session")->getFlashBag()->set("success", "O Produto " . $produto->getNome() . " foi alterado com sucesso!");
+            $this->get("session")->getFlashBag()->set("success", "A Categoria " . $categoria->getNome() . " foi alterado com sucesso!");
             return $this->redirectToRoute("listar_categoria");
         }
 
         return [
-            'produto' => $produto,
+            'categoria' => $categoria,
             'form' => $form->createView()
         ];
     }
@@ -105,12 +103,12 @@ class CategoriaController extends Controller
      */
     public function view(Request $request, $id)
     {
-        /*TODO: TROCAR PRODUTO POR CATEGORIA */
+
         $em = $this->getDoctrine()->getManager();
-        $produto = $em->getRepository(Produto::class)->find($id);
+        $categoria = $em->getRepository(Categoria::class)->find($id);
 
         return [
-            'produto' => $produto
+            'categoria' => $categoria
         ];
     }
 
@@ -126,17 +124,16 @@ class CategoriaController extends Controller
     public function delete(Request $request, $id)
     {
 
-        /*TODO: TROCAR PRODUTO POR CATEGORIA */
         $em = $this->getDoctrine()->getManager();
-        $produto = $em->getRepository(Produto::class)->find($id);
+        $categoria = $em->getRepository(Categoria::class)->find($id);
 
-        if (!$produto) {
-            $mensagem = "Produto não foi encontrado!";
+        if (!$categoria) {
+            $mensagem = "Categoria não foi encontrada!";
             $tipo = "warning";
         } else {
-            $em->remove($produto);
+            $em->remove($categoria);
             $em->flush();
-            $mensagem = "Produto foi excluído com sucesso!";
+            $mensagem = "Categoria foi excluída com sucesso!";
             $tipo = "success";
         }
 
