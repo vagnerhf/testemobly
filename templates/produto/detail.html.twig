@@ -49,5 +49,9 @@
             <td>{{ caracteristica.nome }}</td>
             <td>{{ caracteristica.descricao }}</td>
         </tr>
+    {% else %}
+        <tr>
+            <td colspan="2">Nenhum Registro</td>
+        </tr>
     {% endfor %}
 {% endblock %}
