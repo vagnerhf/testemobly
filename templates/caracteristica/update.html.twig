@@ -1,0 +1,12 @@
+
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Edição de Característica
+{% endblock %}
+
+{% block body %}
+    <h1>Edição de Característica- <small>{{ caracteristica.nome }}</small></h1>
+    <hr>
+    {% include "caracteristica/_form.html.twig" %}
+{% endblock %}
