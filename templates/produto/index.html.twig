@@ -14,7 +14,7 @@
     {% for produto in produtos %}
 
                 <div class="card">
-                    <img class="card-img-top" src="https://www.meditationallianceinternational.com/images/NoImageAvailable.png" alt="">
+                    <img class="card-img-top" src="{{produto.imagem}}" alt="">
                     <div class="card-body">
                         <h5 class="card-title">{{produto.nome}}</h5>
                         <p class="card-text">{{produto.descricao}}</p>

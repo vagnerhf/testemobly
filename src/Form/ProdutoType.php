@@ -21,6 +21,12 @@ class ProdutoType extends AbstractType
                     'class' => 'form-control'
                 ]
             ])
+            ->add('imagem', TextType::class, [
+                'label' => "URL da Imagem",
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
             ->add('preco', TextType::class, [
                 'label' => "Preço",
                 'attr' => [

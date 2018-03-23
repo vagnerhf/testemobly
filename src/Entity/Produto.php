@@ -23,6 +23,14 @@ class Produto extends MinhaEntidade
      */
     private $preco;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Campo imagem não pode ser vazio!")
+     */
+    private $imagem;
+
 
     /**
      * Many Users have Many Categorias.
@@ -69,6 +77,24 @@ class Produto extends MinhaEntidade
     public function setPreco($preco)
     {
         $this->preco = $preco;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImagem(): string
+    {
+        return $this->imagem;
+    }
+
+    /**
+     * @param string $imagem
+     * @return Produto
+     */
+    public function setImagem(string $imagem): Produto
+    {
+        $this->imagem = $imagem;
         return $this;
     }
 
