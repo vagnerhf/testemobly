@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 class CategoriaController extends Controller
 {
     /**
-     * @Route("/categoria", name="listar_categoria")
+     * @Route("/categorias", name="listar_categoria")
      * @Template("categoria/index.html.twig")
      */
     public function index()

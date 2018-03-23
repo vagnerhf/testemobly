@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 class CaracteristicaController extends Controller
 {
     /**
-     * @Route("/caracteristica", name="listar_caracteristica")
+     * @Route("/caracteristicas", name="listar_caracteristica")
      * @Template("caracteristica/index.html.twig")
      */
     public function index()
@@ -52,7 +52,7 @@ class CaracteristicaController extends Controller
             $em->persist($caracteristica);
             $em->flush();
 
-            $this->addFlash('success', "Característica cadastrado!");
+            $this->addFlash('success', "Característica cadastrada!");
             return $this->redirectToRoute('listar_caracteristica');
 
 

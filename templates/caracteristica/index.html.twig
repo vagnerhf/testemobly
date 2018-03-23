@@ -23,7 +23,7 @@
     <hr>
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ path("cadastrar_categoria") }}" class="btn btn-primary btn-lg pull-right">Adicionar Categoria</a>
+            <a href="{{ path("cadastrar_caracteristica") }}" class="btn btn-primary btn-lg pull-right">Adicionar Característica</a>
         </div>
     </div>
     <table class="table table-striped table-hover mt-3">
@@ -36,7 +36,7 @@
         </thead>
         <tbody>
 
-        {% for produto in produtos %}
+        {% for caracteristica in caracteristicas %}
             <tr>
                 <td>{{ caracteristica.id }}</td>
                 <td>{{ caracteristica.nome }}</td>
