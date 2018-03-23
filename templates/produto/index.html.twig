@@ -1,70 +1,28 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-    Listagem de produtos -
+    Nossos Produtos
 {% endblock %}
 
 
 {% block body %}
 
-    {% for flashMessage in app.session.flashbag.get('success') %}
-        <div class="alert alert-success">
-            {{ flashMessage }}
-        </div>
-    {% endfor %}
-
-    {% for flashMessage in app.session.flashbag.get('warning') %}
-        <div class="alert alert-warning">
-            {{ flashMessage }}
-        </div>
-    {% endfor %}
-
-    <h1>Listando produtos</h1>
+    <h1>Nossos Produtos</h1>
     <hr>
-    <div class="row">
-        <div class="col-md-12">
-            <a href="{{ path("cadastrar_produto") }}" class="btn btn-primary btn-lg pull-right">Adicionar Produto</a>
-        </div>
-    </div>
-    <table class="table table-striped table-hover mt-3">
-        <thead>
-        <tr>
-            <th>Cod.</th>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Ações</th>
-        </tr>
-        </thead>
-        <tbody>
 
-        {% for produto in produtos %}
-            <tr>
-                <td>{{ produto.id }}</td>
-                <td>{{ produto.nome }}</td>
-                <td>R$ {{ produto.preco|number_format(2, ",", ".") }}</td>
-                <td>
-                    <a class="btn btn-sm btn-warning" href="{{ path('visualizar_produto', {"id": produto.id}) }}"><i class="fa fa-eye"></i></a>
-                    <a class="btn btn-sm btn-success" href="{{ path('editar_produto', {"id": produto.id}) }}"><i class="fa fa-pencil"></i> </a>
-                    <a class="btn btn-sm btn-danger bt_excluir_produto" href="{{ path('apagar_produto', {"id": produto.id}) }}"><i class="fa fa-trash"></i> </a>
-                </td>
-            </tr>
+    <div class="card-deck">
+    {% for produto in produtos %}
+
+                <div class="card">
+                    <img class="card-img-top" src="https://www.meditationallianceinternational.com/images/NoImageAvailable.png" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{produto.nome}}</h5>
+                        <p class="card-text">{{produto.descricao}}</p>
+                        <a class="btn btn-bg btn-primary" href="{{ path('detalhe_produto', {"id": produto.id}) }}"><i class="fa fa-eye"></i>&nbsp;Detalhes</a>
+                        <a class="btn btn-bg btn-success" href="{{ path('detalhe_produto', {"id": produto.id}) }}"><i class="fa fa-shopping-cart"></i>&nbsp;Comprar</a>
+                    </div>
+                </div>
+
         {% endfor %}
-
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $(".bt_excluir_produto").click(function(ev) {
-                    ev.preventDefault();
-
-                    var url = $(this).prop("href");
-
-                    if (confirm("Dejesa excluir esse produto?")) {
-                        window.location = url;
-                    }
-
-                });
-            });
-        </script>
-
-        </tbody>
-    </table>
+    </div>
 {% endblock %}

@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 class ProdutoController extends Controller
 {
     /**
-     * @Route("/produto", name="listar_produto")
+     * @Route("/", name="loja_produto")
      * @Template("produto/index.html.twig")
      */
     public function index()
@@ -27,6 +27,23 @@ class ProdutoController extends Controller
         ];
 
     }
+
+    /**
+     * @Route("/produtos", name="listar_produto")
+     * @Template("produto/list.html.twig")
+     */
+    public function browse()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $produtos = $em->getRepository(Produto::class)->findAll();
+
+        return [
+            'produtos' => $produtos
+        ];
+
+    }
+
 
     /**
      * @param Request $request
@@ -99,6 +116,24 @@ class ProdutoController extends Controller
      * @Template("produto/view.html.twig")
      */
     public function view(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $produto = $em->getRepository(Produto::class)->find($id);
+
+        return [
+            'produto' => $produto
+        ];
+    }
+
+    /**
+     * @param Request $request
+     * @param $id
+     *
+     * @return array
+     * @Route("produto/detalhes/{id}", name="detalhe_produto")
+     * @Template("produto/detail.html.twig")
+     */
+    public function detail(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $produto = $em->getRepository(Produto::class)->find($id);
