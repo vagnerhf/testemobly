@@ -282,4 +282,16 @@ class Pedido
 
     }
 
+    public static function limparSessao(SessionInterface $session)
+    {
+
+        if(!$carrinho = $session->get('carrinho'))
+        {
+
+            $session->set('carrinho', null);
+
+        }
+
+    }
+
 }

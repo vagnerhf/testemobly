@@ -4,6 +4,24 @@
 
 {% block body %}
     <h1>Seu Pedido</h1>
+    <div class="row">
 
-    {% include "pedido/_form.html.twig" %}
+        <div class="col-md-6">
+            <h2>Carrinho</h2>
+            <hr>
+            {% for item in carrinho %}
+
+                <p>{{ item.nome }}</p>
+
+            {% else %}
+                <p>Não há ítens no Carrinho</p>
+            {% endfor %}
+        </div>
+
+        <div class="col-md-6">
+            <h2>Seus Dados</h2>
+            <hr>
+            {% include "pedido/_form.html.twig" %}
+        </div>
+    </div>
 {% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Pedido;
+use App\Entity\Produto;
 use App\Form\PedidoType;
 use Doctrine\Common\Collections\ArrayCollection;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -17,7 +18,8 @@ class PedidoController extends Controller
     /**
      * @Route("/pedido", name="loja_pedido")
      * @Template("pedido/index.html.twig")
-     * @return Response
+     * @param Request $request
+     * @return array
      */
     public function index(Request $request)
     {
@@ -64,7 +66,7 @@ class PedidoController extends Controller
             Pedido::adicionaProdutoSessao($session, $produto);
         }
 
-        return $this->redirectToRoute('pedido');
+        return $this->redirectToRoute('loja_produto');
 
     }
 
@@ -75,16 +77,32 @@ class PedidoController extends Controller
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function removeCart(Request $request, $id) {
-/*
+
+        $session = $this->get('session');
+
         $em = $this->getDoctrine()->getManager();
         $produto = $em->getRepository(Produto::class)->find($id);
 
         if($produto) {
-            Pedido::removeProdutoSessao($session,$produto);
+            Pedido::removeProdutoSessao($session, $produto);
         }
-*/
-        return $this->redirectToRoute('pedido');
+
+        return $this->redirectToRoute('loja_pedido');
 
     }
 
+
+    /**
+     * @Route("/pedido/limpar/carrinho", name="pedido_limpar_carrinho")
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function clearCart() {
+
+        $session = $this->get('session');
+
+        Pedido::limparSessao($session);
+
+        return $this->redirectToRoute('loja_pedido');
+
+    }
 }
