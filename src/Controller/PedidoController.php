@@ -32,15 +32,13 @@ class PedidoController extends Controller
 
         $session = $this->get('session');
 
+        $carrinho = $session->get('carrinho');
 
-        VarDumper::dump($session);
-
-        if(isset($session->get['carrinho']))
+        if(!$carrinho)
         {
-            $carrinho = $session->get['carrinho'];
-        } else {
             $carrinho = new ArrayCollection();
         }
+
 
         return [
             'carrinho' => $carrinho,

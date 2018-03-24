@@ -6,7 +6,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PedidoRepository")
  */
@@ -254,13 +253,15 @@ class Pedido
         }
     }
 
-    public static function adicionaProdutoSessao(SessionInterface $session, Produto $produto)
+    public static function adicionaProdutoSessao(SessionInterface $session, Produto $produto, $quantidade = 1)
     {
 
         if(!$carrinho = $session->get('carrinho'))
         {
             $carrinho = new ArrayCollection();
         }
+
+        $produto->setQuantidade($quantidade);
 
         $carrinho->add($produto);
 
@@ -271,7 +272,7 @@ class Pedido
     public static function removeProdutoSessao(SessionInterface $session, Produto $produto)
     {
 
-        if(!$carrinho = $session->get('carrinho'))
+        if($carrinho = $session->get('carrinho'))
         {
 
             $carrinho->removeElement($produto);
@@ -285,7 +286,7 @@ class Pedido
     public static function limparSessao(SessionInterface $session)
     {
 
-        if(!$carrinho = $session->get('carrinho'))
+        if($carrinho = $session->get('carrinho'))
         {
 
             $session->set('carrinho', null);

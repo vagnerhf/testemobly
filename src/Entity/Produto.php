@@ -53,6 +53,10 @@ class Produto extends MinhaEntidade
      */
     private $caracteristicas;
 
+    /**
+     * @var int
+     */
+    private $quantidade;
 
     public function __construct() {
         $this->categorias = new ArrayCollection();
@@ -135,7 +139,23 @@ class Produto extends MinhaEntidade
     }
 
 
+    /**
+     * @return int
+     */
+    public function getQuantidade()
+    {
+        return $this->quantidade;
+    }
 
+    /**
+     * @param float $quantidade
+     * @return $this
+     */
+    public function setQuantidade($quantidade)
+    {
+        $this->quantidade = $quantidade;
+        return $this;
+    }
 
 
 
