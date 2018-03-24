@@ -15,7 +15,7 @@ use Symfony\Component\VarDumper\VarDumper;
 class PedidoController extends Controller
 {
     /**
-     * @Route("/pedido", name="pedido")
+     * @Route("/pedido", name="loja_pedido")
      * @Template("pedido/index.html.twig")
      * @return Response
      */

@@ -6,23 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c772fc1-4474-405a-b7d1-2066c331cfe7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/CaracteristicaController.php" afterPath="$PROJECT_DIR$/src/Controller/CaracteristicaController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProdutoController.php" afterPath="$PROJECT_DIR$/src/Controller/ProdutoController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Pedido.php" afterPath="$PROJECT_DIR$/src/Entity/Pedido.php" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CaracteristicaType.php" afterPath="$PROJECT_DIR$/src/Form/CaracteristicaType.php" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CategoriaType.php" afterPath="$PROJECT_DIR$/src/Form/CategoriaType.php" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PedidoType.php" afterPath="$PROJECT_DIR$/src/Form/PedidoType.php" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ProdutoType.php" afterPath="$PROJECT_DIR$/src/Form/ProdutoType.php" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProdutoRepository.php" afterPath="$PROJECT_DIR$/src/Repository/ProdutoRepository.php" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PedidoController.php" afterPath="$PROJECT_DIR$/src/Controller/PedidoController.php" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/caracteristica/index.html.twig" afterPath="$PROJECT_DIR$/templates/caracteristica/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/caracteristica/view.html.twig" afterPath="$PROJECT_DIR$/templates/caracteristica/view.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/categoria/index.html.twig" afterPath="$PROJECT_DIR$/templates/categoria/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/categoria/list.html.twig" afterPath="$PROJECT_DIR$/templates/categoria/list.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/produto/detail.html.twig" afterPath="$PROJECT_DIR$/templates/produto/detail.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/produto/index.html.twig" afterPath="$PROJECT_DIR$/templates/produto/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/produto/list.html.twig" afterPath="$PROJECT_DIR$/templates/produto/list.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/produto/view.html.twig" afterPath="$PROJECT_DIR$/templates/produto/view.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,31 +51,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/produto/list.html.twig">
+      <file leaf-file-name="PedidoController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/PedidoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            <state relative-caret-position="135">
+              <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/categoria/index.html.twig">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="57" column="39" lean-forward="false" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
+            <state relative-caret-position="233">
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pedido.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Pedido.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/caracteristica/index.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/pedido/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="135">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -132,7 +127,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/0bd4afad-2070-4d70-89b0-f3d6930bfebf/console_1.sql" />
         <option value="$PROJECT_DIR$/templates/pedido/_form.html.twig" />
         <option value="$PROJECT_DIR$/templates/pedido/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/PedidoController.php" />
         <option value="$PROJECT_DIR$/src/Controller/CategoriaController.php" />
         <option value="$PROJECT_DIR$/src/Controller/CaracteristicaController.php" />
         <option value="$PROJECT_DIR$/src/Controller/ProdutoController.php" />
@@ -148,9 +142,10 @@
         <option value="$PROJECT_DIR$/templates/categoria/list.html.twig" />
         <option value="$PROJECT_DIR$/templates/caracteristica/view.html.twig" />
         <option value="$PROJECT_DIR$/templates/categoria/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/produto/list.html.twig" />
         <option value="$PROJECT_DIR$/templates/caracteristica/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/PedidoController.php" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
       </list>
     </option>
   </component>
@@ -412,12 +407,6 @@
             <path>
               <item name="symfony" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="symfony" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -499,12 +488,12 @@
       <workItem from="1521726199090" duration="14000" />
       <workItem from="1521755914645" duration="3044000" />
       <workItem from="1521810622317" duration="29933000" />
-      <workItem from="1521891448334" duration="5199000" />
+      <workItem from="1521891448334" duration="5468000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39052000" />
+    <option name="totallyTimeSpent" value="39321000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="265" y="0" width="1926" height="1032" extended-state="6" />
@@ -627,16 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/PedidoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
-          <folding>
-            <element signature="e#34#56#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ProdutoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
@@ -681,16 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Pedido.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="64" column="5" lean-forward="false" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-          <folding>
-            <element signature="e#30#78#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Produto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -706,16 +675,6 @@
         <state relative-caret-position="615">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/PedidoType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="e#28#50#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,16 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/PedidoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <element signature="e#34#56#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/ProdutoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -819,22 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="524">
           <caret line="37" column="56" lean-forward="true" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pedido/_form.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pedido/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -919,20 +852,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="56" column="6" lean-forward="false" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/produto/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/categoria/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" column="39" lean-forward="false" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -945,10 +876,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/categoria/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Repository/PedidoRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="39" lean-forward="false" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
+        <state relative-caret-position="105">
+          <caret line="9" column="4" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="13" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/PedidoType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pedido/_form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pedido/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/PedidoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Pedido.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
