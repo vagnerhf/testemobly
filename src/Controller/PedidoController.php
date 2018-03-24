@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\VarDumper\VarDumper;
+
 
 class PedidoController extends Controller
 {
@@ -25,10 +25,24 @@ class PedidoController extends Controller
     {
 
         $pedido = new Pedido();
-
         $form = $this->createForm(PedidoType::class, $pedido);
 
         $form->handleRequest($request);
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($pedido);
+            $em->flush();
+
+            $this->get('session')->getFlashBag()->set('success', 'Pedido cadastrado pode voltar a Comprar!');
+            return $this->redirectToRoute('loja_produto');
+
+        }
+
+
 
         $session = $this->get('session');
 
@@ -45,6 +59,15 @@ class PedidoController extends Controller
             'form' => $form->createView()
         ];
     }
+
+
+
+
+
+
+
+
+
 
 
     /**

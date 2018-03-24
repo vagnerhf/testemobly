@@ -52,7 +52,7 @@ class CaracteristicaController extends Controller
             $em->persist($caracteristica);
             $em->flush();
 
-            $this->get('sessio')->getFlashBag()->set('success', 'Característica cadastrada!');
+            $this->get('session')->getFlashBag()->set('success', 'Característica cadastrada!');
             return $this->redirectToRoute('listar_caracteristica');
 
         }

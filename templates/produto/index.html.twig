@@ -9,6 +9,18 @@
 
     <h1>Nossos Produtos</h1>
 
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% for flashMessage in app.session.flashbag.get('warning') %}
+        <div class="alert alert-warning">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
     {% if categoria %}
         <h2>{{ categoria.nome }}</h2>
         <p><small>{{ categoria.descricao }}</small></p>
