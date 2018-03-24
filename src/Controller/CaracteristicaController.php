@@ -52,9 +52,8 @@ class CaracteristicaController extends Controller
             $em->persist($caracteristica);
             $em->flush();
 
-            $this->addFlash('success', "Característica cadastrada!");
+            $this->get('sessio')->getFlashBag()->set('success', 'Característica cadastrada!');
             return $this->redirectToRoute('listar_caracteristica');
-
 
         }
 
@@ -82,8 +81,8 @@ class CaracteristicaController extends Controller
             $em->persist($caracteristica);
             $em->flush();
 
-            $this->get('session')->getFlashBag()->set("success", "A Característica " . $caracteristica->getNome() . " foi alterada com sucesso!");
-            return $this->redirectToRoute("listar_caracteristica");
+            $this->get('session')->getFlashBag()->set('success', 'A Característica ' . $caracteristica->getNome() . ' foi alterada com sucesso!');
+            return $this->redirectToRoute('listar_caracteristica');
         }
 
         return [
@@ -127,17 +126,17 @@ class CaracteristicaController extends Controller
         $caracteristica = $em->getRepository(Caracteristica::class)->find($id);
 
         if (!$caracteristica) {
-            $mensagem = "Característica não foi encontrada!";
-            $tipo = "warning";
+            $mensagem = 'Característica não foi encontrada!';
+            $tipo = 'warning';
         } else {
             $em->remove($caracteristica);
             $em->flush();
-            $mensagem = "Característica foi excluída com sucesso!";
-            $tipo = "success";
+            $mensagem = 'Característica foi excluída com sucesso!';
+            $tipo = 'success';
         }
 
         $this->get('session')->getFlashBag()->set($tipo, $mensagem);
-        return $this->redirectToRoute("listar_caracteristica");
+        return $this->redirectToRoute('listar_caracteristica');
 
     }
 }

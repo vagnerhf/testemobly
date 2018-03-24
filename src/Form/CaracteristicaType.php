@@ -41,7 +41,7 @@ class CaracteristicaType extends AbstractType
     {
         $resolver->setDefaults([
             // uncomment if you want to bind to a class
-            //'data_class' => Produto::class,
+            //'data_class' => Caracteristica::class,
         ]);
     }
 }

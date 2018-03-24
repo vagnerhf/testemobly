@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-    Listagem de Caracteristica
+    Listagem de Característica
 {% endblock %}
 
 
@@ -19,11 +19,11 @@
         </div>
     {% endfor %}
 
-    <h1>Listando Caracteristicas</h1>
+    <h1>Listando Características</h1>
     <hr>
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ path("cadastrar_caracteristica") }}" class="btn btn-primary btn-lg pull-right">Adicionar Característica</a>
+            <a href="{{ path('cadastrar_caracteristica') }}" class="btn btn-primary btn-lg pull-right">Adicionar Característica</a>
         </div>
     </div>
     <table class="table table-striped table-hover mt-3">
@@ -41,9 +41,9 @@
                 <td>{{ caracteristica.id }}</td>
                 <td>{{ caracteristica.nome }}</td>
                 <td>
-                    <a class="btn btn-sm btn-warning" href="{{ path('visualizar_caracteristica', {"id": caracteristica.id}) }}"><i class="fa fa-eye"></i></a>
-                    <a class="btn btn-sm btn-success" href="{{ path('editar_caracteristica', {"id": caracteristica.id}) }}"><i class="fa fa-pencil"></i> </a>
-                    <a class="btn btn-sm btn-danger bt_excluir_caracteristica" href="{{ path('apagar_caracteristica', {"id": caracteristica.id}) }}"><i class="fa fa-trash"></i> </a>
+                    <a class="btn btn-sm btn-warning" href="{{ path('visualizar_caracteristica', {'id': caracteristica.id}) }}"><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-sm btn-success" href="{{ path('editar_caracteristica', {'id': caracteristica.id}) }}"><i class="fa fa-pencil"></i> </a>
+                    <a class="btn btn-sm btn-danger bt_excluir_caracteristica" href="{{ path('apagar_caracteristica', {'id': caracteristica.id}) }}"><i class="fa fa-trash"></i> </a>
                 </td>
             </tr>
         {% endfor %}

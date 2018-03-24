@@ -59,6 +59,14 @@ class Pedido
     /**
      * @return mixed
      */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getNome()
     {
         return $this->nome;

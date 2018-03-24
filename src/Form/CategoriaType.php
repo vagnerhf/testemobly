@@ -16,19 +16,19 @@ class CategoriaType extends AbstractType
     {
         $builder
             ->add('nome', TextType::class, [
-                'label' => "Nome da Categoria",
+                'label' => 'Nome da Categoria',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('descricao', TextareaType::class, [
-                'label' => "Descrição",
+                'label' => 'Descrição',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('enviar', SubmitType::class, [
-                'label' => "Salvar",
+                'label' => 'Salvar',
                 'attr' => [
                     'class' => 'btn btn-primary'
                 ]
@@ -41,7 +41,7 @@ class CategoriaType extends AbstractType
     {
         $resolver->setDefaults([
             // uncomment if you want to bind to a class
-            //'data_class' => Produto::class,
+            //'data_class' => Categoria::class,
         ]);
     }
 }

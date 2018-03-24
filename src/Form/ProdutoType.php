@@ -16,31 +16,31 @@ class ProdutoType extends AbstractType
     {
         $builder
             ->add('nome', TextType::class, [
-                'label' => "Nome do Produto",
+                'label' => 'Nome do Produto',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('imagem', TextType::class, [
-                'label' => "URL da Imagem",
+                'label' => 'URL da Imagem',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('preco', TextType::class, [
-                'label' => "Preço",
+                'label' => 'Preço',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('descricao', TextareaType::class, [
-                'label' => "Descrição",
+                'label' => 'Descrição',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('enviar', SubmitType::class, [
-                'label' => "Salvar",
+                'label' => 'Salvar',
                 'attr' => [
                     'class' => 'btn btn-primary'
                 ]

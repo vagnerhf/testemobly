@@ -88,10 +88,8 @@ class ProdutoController extends Controller
             $em->persist($produto);
             $em->flush();
 
-            //$this->get('session')->getFlashBag()->set('success', 'Produto foi salvo com sucesso!');
-            $this->addFlash('success', "Produto cadastrado!");
+            $this->get('session')->getFlashBag()->set('success', 'Produto foi salvo com sucesso!');
             return $this->redirectToRoute('listar_produto');
-
 
         }
 
@@ -118,8 +116,8 @@ class ProdutoController extends Controller
             $em->persist($produto);
             $em->flush();
 
-            $this->get('session')->getFlashBag()->set("success", "O Produto " . $produto->getNome() . " foi alterado com sucesso!");
-            return $this->redirectToRoute("listar_produto");
+            $this->get('session')->getFlashBag()->set('success', 'O Produto ' . $produto->getNome() . ' foi alterado com sucesso!');
+            return $this->redirectToRoute('listar_produto');
         }
 
         return [
@@ -159,8 +157,6 @@ class ProdutoController extends Controller
         $em = $this->getDoctrine()->getManager();
         $produto = $em->getRepository(Produto::class)->find($id);
 
-        VarDumper::dump($produto->getCaracteristicas());
-
         return [
             'produto' => $produto,
             'carateristicas' => $produto->getCaracteristicas()
@@ -182,17 +178,17 @@ class ProdutoController extends Controller
         $produto = $em->getRepository(Produto::class)->find($id);
 
         if (!$produto) {
-            $mensagem = "Produto não foi encontrado!";
-            $tipo = "warning";
+            $mensagem = 'Produto não foi encontrado!';
+            $tipo = 'warning';
         } else {
             $em->remove($produto);
             $em->flush();
-            $mensagem = "Produto foi excluído com sucesso!";
-            $tipo = "success";
+            $mensagem = 'Produto foi excluído com sucesso!';
+            $tipo = 'success';
         }
 
         $this->get('session')->getFlashBag()->set($tipo, $mensagem);
-        return $this->redirectToRoute("listar_produto");
+        return $this->redirectToRoute('listar_produto');
 
     }
 }

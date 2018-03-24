@@ -17,37 +17,37 @@ class PedidoType extends AbstractType
     {
         $builder
             ->add('nome', TextType::class, [
-            'label' => "Nome do Cliente",
+            'label' => 'Nome do Cliente',
             'attr' => [
                 'class' => 'form-control'
                 ]
             ])
             ->add('endereco', TextType::class, [
-                'label' => "Endeereço",
+                'label' => 'Endeereço',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('numero', TextType::class, [
-                'label' => "Número",
+                'label' => 'Número',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('complemento', TextType::class, [
-                'label' => "Complemento",
+                'label' => 'Complemento',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('bairro', TextType::class, [
-                'label' => "Bairro",
+                'label' => 'Bairro',
                 'attr' => [
                     'class' => 'form-control'
                 ]
             ])
             ->add('enviar', SubmitType::class, [
-                'label' => "Salvar",
+                'label' => 'Salvar',
                 'attr' => [
                     'class' => 'btn btn-primary'
                 ]

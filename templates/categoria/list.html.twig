@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-    Listagem de Categorias -
+    Listagem de Categorias
 {% endblock %}
 
 
@@ -25,7 +25,7 @@
                 <td>{{ categoria.nome }}</td>
                 <td>{{ categoria.descricao }}</td>
                 <td>
-                    <a class="btn btn-sm btn-success" href="{{ path('loja_produto_categoria', {"id": categoria.id}) }}"><i class="fa fa-play"></i>&nbsp;Ver Produtos</a>
+                    <a class="btn btn-sm btn-success" href="{{ path('loja_produto_categoria', {'id': categoria.id}) }}"><i class="fa fa-play"></i>&nbsp;Ver Produtos</a>
                 </td>
             </tr>
         {% endfor %}
