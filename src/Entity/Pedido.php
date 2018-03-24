@@ -261,6 +261,10 @@ class Pedido
             $carrinho = new ArrayCollection();
         }
 
+        /**
+         * TODO: Precia de uma versão mais eficaz para não duplicar os itens no carrinho.
+         */
+
         $produto->setQuantidade($quantidade);
 
         $carrinho->add($produto);

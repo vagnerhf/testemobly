@@ -7,51 +7,65 @@
 {% block body %}
     <h1>Visualização de produto - <small>{{ produto.nome }}</small></h1>
     <hr>
-    <table class="table table-striped">
 
-        <tbody>
-        <tr>
-            <th>Cod.</th>
-            <td>{{ produto.id }}</td>
-        </tr>
-        <tr>
-            <th>Imagem</th>
-            <td><img src="{{ produto.imagem }}" width="100"></td>
-        </tr>
-        <tr>
-            <th>Nome</th>
-            <td>{{ produto.nome }}</td>
-        </tr>
-        <tr>
-            <th>Preço</th>
-            <td>R$ {{ produto.preco|number_format(2, ',', '.') }}</td>
-        </tr>
-        <tr>
-            <th>Descrição</th>
-            <td>{{ produto.descricao|nl2br }}</td>
-        </tr>
-        </tbody>
+    <div class="row">
+        <div class="col-6">
 
-    </table>
+            <figure class="figure">
+                <img src="{{ produto.imagem }}" class="figure-img img-fluid rounded" alt="">
+                <figcaption class="figure-caption text-right">Imagem do Produto.</figcaption>
+            </figure>
 
-    <h2>Características</h2>
-    <table class="table table-striped table-hover mt-3">
-    <thead>
-    <tr>
-        <th>Característica</th>
-        <th>Decrição</th>
-    </tr>
-    </thead>
-    <tbody>
+            <h2>Características</h2>
+            <table class="table table-striped table-hover mt-3">
+                <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Decrição</th>
+                </tr>
+                </thead>
+                <tbody>
 
-    {% for caracteristica in carateristicas %}
-        <tr>
-            <td>{{ caracteristica.nome }}</td>
-            <td>{{ caracteristica.descricao }}</td>
-        </tr>
-    {% else %}
-        <tr>
-            <td colspan="2">Nenhum Registro</td>
-        </tr>
-    {% endfor %}
+                {% for caracteristica in carateristicas %}
+                    <tr>
+                        <td>{{ caracteristica.nome }}</td>
+                        <td>{{ caracteristica.descricao }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="2">Nenhum Registro</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="col-6">
+            <table class="table table-striped">
+
+                <tbody>
+                <tr>
+                    <th>Cod.</th>
+                    <td>{{ produto.id }}</td>
+                </tr>
+
+                <tr>
+                    <th>Nome</th>
+                    <td>{{ produto.nome }}</td>
+                </tr>
+                <tr>
+                    <th>Preço</th>
+                    <td>R$ {{ produto.preco|number_format(2, ',', '.') }}</td>
+                </tr>
+                <tr>
+                    <th>Descrição</th>
+                    <td>{{ produto.descricao|nl2br }}</td>
+                </tr>
+                </tbody>
+
+            </table>
+            <a class="btn btn-lg btn-block btn-success" href="{{ path('pedido_adiciona_carrinho', {'id': produto.id}) }}"><i class="fa fa-shopping-cart"></i>&nbsp;Comprar</a>
+        </div>
+    </div>
 {% endblock %}
