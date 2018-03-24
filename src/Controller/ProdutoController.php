@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Categoria;
 use App\Entity\Produto;
 use App\Form\ProdutoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -24,7 +25,26 @@ class ProdutoController extends Controller
         $produtos = $em->getRepository(Produto::class)->findAll();
 
         return [
-            'produtos' => $produtos
+            'produtos' => $produtos,
+            'categoria' => null
+        ];
+
+    }
+
+    /**
+     * @Route("/produto/categoria/{id}", name="loja_produto_categoria")
+     * @Template("produto/index.html.twig")
+     */
+    public function byCategory(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $categoria = $em->getRepository(Categoria::class)->find($id);
+
+
+        return [
+            'produtos' => $categoria->getProdutos(),
+            'categoria' => $categoria
         ];
 
     }

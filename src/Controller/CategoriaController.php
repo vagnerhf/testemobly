@@ -141,4 +141,21 @@ class CategoriaController extends Controller
         return $this->redirectToRoute("listar_categoria");
 
     }
+
+    /**
+     * @Route("/categoria/produto", name="loja_categoria")
+     * @Template("categoria/list.html.twig")
+     */
+    public function browse()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $categorias = $em->getRepository(Categoria::class)->findAll();
+
+        return [
+            'categorias' => $categorias
+        ];
+
+    }
+
 }

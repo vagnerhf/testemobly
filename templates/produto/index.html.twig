@@ -8,6 +8,11 @@
 {% block body %}
 
     <h1>Nossos Produtos</h1>
+
+    {% if categoria %}
+        <h2>{{ categoria.nome }}</h2>
+        <p><small>{{ categoria.descricao }}</small></p>
+    {% endif %}
     <hr>
 
     <div class="card-deck">
