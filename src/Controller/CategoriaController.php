@@ -52,8 +52,7 @@ class CategoriaController extends Controller
             $em->persist($categoria);
             $em->flush();
 
-            //$this->get('session')->getFlashBag()->set('success', 'Produto foi salvo com sucesso!');
-            $this->addFlash('success', "Categoria cadastrada!");
+            $this->get('session')->getFlashBag()->set('success', 'Categoria foi salvo com sucesso!');
             return $this->redirectToRoute('listar_categoria');
 
 
@@ -83,8 +82,8 @@ class CategoriaController extends Controller
             $em->persist($categoria);
             $em->flush();
 
-            $this->get("session")->getFlashBag()->set("success", "A Categoria " . $categoria->getNome() . " foi alterado com sucesso!");
-            return $this->redirectToRoute("listar_categoria");
+            $this->get('session')->getFlashBag()->set('success', 'A Categoria ' . $categoria->getNome() . ' foi alterado com sucesso!');
+            return $this->redirectToRoute('listar_categoria');
         }
 
         return [
@@ -128,13 +127,13 @@ class CategoriaController extends Controller
         $categoria = $em->getRepository(Categoria::class)->find($id);
 
         if (!$categoria) {
-            $mensagem = "Categoria não foi encontrada!";
-            $tipo = "warning";
+            $mensagem = 'Categoria não foi encontrada!';
+            $tipo = 'warning';
         } else {
             $em->remove($categoria);
             $em->flush();
-            $mensagem = "Categoria foi excluída com sucesso!";
-            $tipo = "success";
+            $mensagem = 'Categoria foi excluída com sucesso!';
+            $tipo = 'success';
         }
 
         $this->get('session')->getFlashBag()->set($tipo, $mensagem);

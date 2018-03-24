@@ -82,7 +82,7 @@ class CaracteristicaController extends Controller
             $em->persist($caracteristica);
             $em->flush();
 
-            $this->get("session")->getFlashBag()->set("success", "A Característica " . $caracteristica->getNome() . " foi alterada com sucesso!");
+            $this->get('session')->getFlashBag()->set("success", "A Característica " . $caracteristica->getNome() . " foi alterada com sucesso!");
             return $this->redirectToRoute("listar_caracteristica");
         }
 

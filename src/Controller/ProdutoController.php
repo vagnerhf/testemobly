@@ -118,7 +118,7 @@ class ProdutoController extends Controller
             $em->persist($produto);
             $em->flush();
 
-            $this->get("session")->getFlashBag()->set("success", "O Produto " . $produto->getNome() . " foi alterado com sucesso!");
+            $this->get('session')->getFlashBag()->set("success", "O Produto " . $produto->getNome() . " foi alterado com sucesso!");
             return $this->redirectToRoute("listar_produto");
         }
 
