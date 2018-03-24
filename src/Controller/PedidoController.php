@@ -24,6 +24,10 @@ class PedidoController extends Controller
     public function index(Request $request)
     {
 
+        $session = $this->get('session');
+
+        $carrinho = $session->get('carrinho');
+
         $pedido = new Pedido();
         $form = $this->createForm(PedidoType::class, $pedido);
 
@@ -32,27 +36,34 @@ class PedidoController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $em = $this->getDoctrine()->getManager();
 
-            $em->persist($pedido);
-            $em->flush();
+            if($carrinho) {
 
-            $this->get('session')->getFlashBag()->set('success', 'Pedido cadastrado pode voltar a Comprar!');
+                $em = $this->getDoctrine()->getManager();
+
+
+                $pedido->setSession($session);
+                $pedido->sessaoParaCarrinho();
+                $pedido->serializeCarrinho();
+
+                $em->persist($pedido);
+                $em->flush();
+
+                $this->get('session')->getFlashBag()->set('success', 'Pedido cadastrado pode voltar a Comprar!');
+
+            } else {
+
+                $this->get('session')->getFlashBag()->set('warning', 'Precisa ter algo na Carrinho para Comprar.');
+
+            }
+
             return $this->redirectToRoute('loja_produto');
-
         }
-
-
-
-        $session = $this->get('session');
-
-        $carrinho = $session->get('carrinho');
 
         if(!$carrinho)
         {
             $carrinho = new ArrayCollection();
         }
-
 
         return [
             'carrinho' => $carrinho,

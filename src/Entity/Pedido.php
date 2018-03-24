@@ -4,9 +4,14 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PedidoRepository")
  */
@@ -249,7 +254,9 @@ class Pedido
     public function serializeCarrinho()
     {
 
-        $this->carrinho = json_encode($this->carrinhoCollection->toArray());
+        $serializer = new Serializer(array(new GetSetMethodNormalizer()), array('json' => new JsonEncoder()));
+
+        $this->carrinho = $serializer->serialize($this->carrinhoCollection, 'json');
 
     }
 
@@ -262,7 +269,11 @@ class Pedido
 
              foreach ($array as $element) {
 
-                 $this->carrinhoCollection->add($element);
+                 $produto = new Produto();
+
+                 $produto->setStdClass($element);
+
+                 $this->carrinhoCollection->add($produto);
              }
         }
 

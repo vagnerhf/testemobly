@@ -158,5 +158,28 @@ class Produto extends MinhaEntidade
     }
 
 
+    /*
+     *
+     public 'preco' => string '100.00' (length=6)
+     public 'imagem' => string 'http://joygayler.com/wp-content/uploads/2014/03/Product_Chair.jpg' (length=65)
+     public 'quantidade' => int 1
+     public 'id' => int 1
+     public 'nome' => string 'Produto 1' (length=9)
+     public 'descricao' => string 'Uma descrição para o Produto 1' (length=32)
+     *
+     */
+
+    public function setStdClass($element) {
+
+        $this->setPreco($element->preco);
+        $this->setImagem($element->imagem);
+        $this->setQuantidade($element->quantidade);
+        $this->id = $element->id;
+        $this->setNome($element->nome);
+        $this->setDescricao($element->descricao);
+
+
+
+    }
 
 }
