@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
@@ -18,14 +19,48 @@ class Pedido
      */
     private $id;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="Campo nome não pode ser vazio!")
+     *
+     */
     private $nome;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="Campo endereço não pode ser vazio!")
+     *
+     */
     private $endereco;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="Campo número não pode ser vazio!")
+     *
+     */
     private $numero;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="text")
+     *
+     */
     private $complemento;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="Campo bairro não pode ser vazio!")
+     *
+     */
     private $bairro;
 
     /**
