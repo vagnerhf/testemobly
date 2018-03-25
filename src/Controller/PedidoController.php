@@ -73,9 +73,26 @@ class PedidoController extends Controller
 
 
 
+    /**
+     * @Route("/pedidos", name="listar_pedido")
+     * @Template("pedido/list.html.twig")
+     */
+    public function browse()
+    {
+        $em = $this->getDoctrine()->getManager();
 
+        $pedidos = $em->getRepository(Pedido::class)->findAll();
 
+        foreach ($pedidos as $pedido) {
 
+            $pedido->unSerializeCarrinho();
+        }
+
+        return [
+            'pedidos' => $pedidos
+        ];
+
+    }
 
 
 

@@ -265,6 +265,8 @@ class Pedido
 
         if($this->carrinho)
         {
+            $this->carrinhoCollection = new ArrayCollection();
+
             $array = json_decode($this->carrinho);
 
              foreach ($array as $element) {
@@ -275,6 +277,7 @@ class Pedido
 
                  $this->carrinhoCollection->add($produto);
              }
+
         }
 
     }

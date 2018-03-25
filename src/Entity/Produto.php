@@ -179,7 +179,6 @@ class Produto extends MinhaEntidade
         $this->setDescricao($element->descricao);
 
 
-
     }
 
 }

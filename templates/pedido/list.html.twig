@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+   Pedidos na Loja
+{% endblock %}
+
+{% block body %}
+
+    <h1>Pedidos na Loja</h1>
+    <hr>
+    {% for pedido in pedidos %}
+        <div class="row">
+            <div class="col-6">
+                <table class="table table-striped">
+
+                    <tbody>
+                    <tr>
+                        <th>Cod.</th>
+                        <td>{{ pedido.id }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Nome do Cliente</th>
+                        <td>{{ pedido.nome }}</td>
+                    </tr>
+                    <tr>
+                        <th>Endereço</th>
+                        <td>{{ pedido.endereco }}</td>
+                    </tr>
+                    <tr>
+                        <th>Número</th>
+                        <td>{{ pedido.numero }}</td>
+                    </tr>
+                    <tr>
+                        <th>Complemento</th>
+                        <td>{{ pedido.complemento }}</td>
+                    </tr>
+                    <tr>
+                        <th>Bairro</th>
+                        <td>{{ pedido.bairro }}</td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="col-6" style="border-left: 1px solid rgba(0,0,0,.1)">
+                {% for item in pedido.carrinhoCollection %}
+                {{ item.nome }} <br>
+                    R$ {{ item.preco|number_format(2, ',', '.') }}<br><br>
+                {% endfor %}
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}
