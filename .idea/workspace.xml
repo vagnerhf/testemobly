@@ -6,8 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c772fc1-4474-405a-b7d1-2066c331cfe7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Migrations/Version20180324201138.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Migrations/Version20180324202638.php" />
       <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -66,8 +64,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="345">
+              <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -529,12 +527,12 @@
       <workItem from="1521891448334" duration="16501000" />
       <workItem from="1521931895023" duration="5105000" />
       <workItem from="1521998853040" duration="9328000" />
-      <workItem from="1522070688420" duration="4969000" />
+      <workItem from="1522070688420" duration="5734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69756000" />
+    <option name="totallyTimeSpent" value="70521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="265" y="0" width="1926" height="1032" extended-state="6" />
@@ -963,8 +961,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="345">
+          <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
           <folding />
         </state>
       </provider>
