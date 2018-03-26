@@ -11,6 +11,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ProdutoController extends Controller
 {
@@ -191,4 +193,64 @@ class ProdutoController extends Controller
         return $this->redirectToRoute('listar_produto');
 
     }
+
+
+
+
+    /**
+     * @Route("/busca", name="loja_busca")
+     * @Template("produto/search.html.twig")
+     * @param Request $request
+     * @return array
+     */
+    public function search(Request $request)
+    {
+
+        $form = $this->createFormBuilder()
+            ->add('busca', TextType::class, [
+                'label' => 'Buscar Produto',
+                'required' => true,
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('enviar', SubmitType::class, [
+                'label' => 'Buscar',
+                'attr' => [
+                    'class' => 'btn btn-primary'
+                ]
+            ])
+            ->getForm()
+        ;
+
+        $form->handleRequest($request);
+
+        $resultadoProduto = array();
+        $resultadoCaracteristica = array();
+        $resultadoCategoria = array();
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $formData = $form->getData();
+
+            $busca = '%' . $formData['busca'] . '%';
+
+            $em = $this->getDoctrine()->getManager();
+
+            $resultadoProduto = $em->getRepository(Produto::class)->buscaProduto($busca);
+
+            $resultadoCaracteristica = $em->getRepository(Produto::class)->buscaCaracteristica($busca);
+
+            $resultadoCategoria = $em->getRepository(Produto::class)->buscaCategoria($busca);
+
+        }
+
+        return [
+            'resultadoProduto' => $resultadoProduto,
+            'resultadoCaracteristica' => $resultadoCaracteristica,
+            'resultadoCategoria' => $resultadoCategoria,
+            'form' => $form->createView()
+        ];
+    }
+
 }

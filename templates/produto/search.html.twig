@@ -1,0 +1,86 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Busca de Produto
+{% endblock %}
+
+{% block body %}
+    <h1>Busca de Produto</h1>
+
+    {{ form_start(form, {"attr": {"novalidate": "novalidate"}}) }}
+
+    <div class="form-group">
+        {{ form_label(form.busca) }}
+        {{ form_widget(form.busca) }}
+        {{ form_errors(form.busca) }}
+    </div>
+
+    {{ form_row(form._token) }}
+
+    {{ form_widget(form.enviar) }}
+
+    <hr>
+
+    <h2>Resultados por Nome e Descrição:</h2>
+
+    <div class="row">
+
+        <div class="col-4">
+
+            <h3>Produto</h3>
+
+            {% for item in resultadoProduto %}
+
+                <dl>
+                    <dt>{{ item.nome }}</dt>
+                    <dd>{{ item.descricao }}</dd>
+                </dl>
+                <hr>
+
+            {% else %}
+
+                <p>Nada Encontrado</p>
+
+            {% endfor %}
+
+        </div>
+        <div class="col-4" style="border-left: 1px solid rgba(0, 0, 0, 0.1)">
+
+            <h3>Característica</h3>
+
+            {% for item in resultadoCaracteristica %}
+
+                <dl>
+                    <dt>{{ item.nome }}</dt>
+                    <dd>{{ item.descricao }}</dd>
+                </dl>
+                <hr>
+
+            {% else %}
+
+                <p>Nada Encontrado</p>
+
+            {% endfor %}
+
+        </div>
+        <div class="col-4" style="border-left: 1px solid rgba(0, 0, 0, 0.1)">
+
+            <h3>Categoria</h3>
+
+            {% for item in resultadoCategoria %}
+
+                <dl>
+                    <dt>{{ item.nome }}</dt>
+                    <dd>{{ item.descricao }}</dd>
+                </dl>
+                <hr>
+
+            {% else %}
+
+                <p>Nada Encontrado</p>
+
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}
